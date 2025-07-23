@@ -272,11 +272,12 @@
       });
     </script>
 
-    <script>
+   <script>
   document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("hamburger");
     const closeIcon = document.getElementById("close-icon");
     const navLinks = document.querySelector(".nav-links");
+    const navItems = document.querySelectorAll(".nav-links ul li a");
 
     hamburger.addEventListener("click", function () {
       navLinks.classList.add("active");
@@ -289,8 +290,18 @@
       closeIcon.classList.remove("active");
       hamburger.classList.remove("hidden");
     });
+
+    // ✅ Hide nav when clicking a nav link (mobile)
+    navItems.forEach((item) => {
+      item.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        closeIcon.classList.remove("active");
+        hamburger.classList.remove("hidden");
+      });
+    });
   });
 </script>
 
-  </body>
+   
+</body>
 </html>
