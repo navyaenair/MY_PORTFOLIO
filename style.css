@@ -10,7 +10,7 @@ html {
 body {
   background-color: black;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -53,7 +53,8 @@ body {
   width: 100%;
 }
 
-.hamburger, .close-icon {
+.hamburger,
+.close-icon {
   display: none;
   font-size: 24px;
   color: white;
@@ -353,7 +354,8 @@ form .btn2 {
   background: #262626;
   font-weight: 300;
   margin-top: 20px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 #msg {
   color: #61b752;
@@ -367,16 +369,15 @@ form .btn2 {
   font-size: 24px;
   color: white;
   cursor: pointer;
-  background-color: #222;         /* background color */
-  padding: 10px 12px;             /* space around the icon */
-  border-radius: 8px;             /* rounded corners */
+  background-color: #222; /* background color */
+  padding: 10px 12px; /* space around the icon */
+  border-radius: 8px; /* rounded corners */
   transition: background-color 0.3s ease;
   box-shadow: 0 2px 8px rgba(196, 2, 50, 0.3);
-
 }
 
 .hamburger:hover {
-  background-color: #e45982;         /* hover effect */
+  background-color: #e45982; /* hover effect */
 }
 
 /* Close Icon */
@@ -388,19 +389,34 @@ form .btn2 {
   z-index: 1001;
   font-size: 24px;
   color: white;
-  background-color: #222;         /* same background */
+  background-color: #222; /* same background */
   padding: 10px 12px;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   box-shadow: 0 2px 8px rgba(196, 2, 50, 0.3);
-
 }
 
 .close-icon:hover {
   background-color: #e45982;
 }
 
+.nav-colored {
+  background: linear-gradient(135deg, #1e1e3f, #3e2f5b);
+  background-size: 400% 400%;
+  animation: gradientFlow 8s ease infinite;
+}
+.navbar {
+  background-color: rgb(201, 19, 73);
+  transition: background-color 0.5s ease;
+}
+.hamburger,
+.close-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2001;
+}
 
 /* ========== ANIMATION KEYFRAMES ========== */
 @keyframes fadeInUp {
@@ -434,82 +450,72 @@ form .btn2 {
   }
 }
 
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* ========== MEDIA QUERIES WITH ANIMATIONS ========== */
+/* Media Query for tablets and small desktops (max-width: 1024px) */
 @media (max-width: 1024px) {
   .navbar {
     padding: 15px 30px;
   }
+
   #main {
     flex-direction: column;
     height: auto;
     padding: 40px 20px;
     animation: fadeInUp 0.8s ease-in-out forwards;
   }
+
   .right img {
     height: auto;
     max-width: 90%;
     animation: zoomIn 0.8s ease-in-out forwards;
   }
+
   .header-text {
     animation: fadeInUp 0.8s ease-in-out forwards;
   }
 }
 
+/* Media Query for tablets and mobile (max-width: 768px) */
 @media (max-width: 768px) {
-  .nav-links ul {
-    flex-direction: column;
-    gap: 15px;
-    animation: fadeInUp 0.5s ease-in-out forwards;
+  .navbar {
+    padding: 10px 20px;
   }
-  .row {
-    flex-direction: column;
-    animation: fadeInUp 0.8s ease-in-out forwards;
-  }
-  .about-col-1 img,
-  .about-col-2 {
-    animation: zoomIn 0.8s ease-in-out forwards;
-  }
-  .services-list {
-    grid-template-columns: 1fr;
-  }
-  .services-list div {
-    animation: fadeInUp 0.8s ease-in-out forwards;
-  }
-  .work-list {
-    grid-template-columns: 1fr;
-  }
-  .contact-left,
-  .contact-right {
-    flex-basis: 100%;
-    animation: fadeInUp 0.8s ease-in-out forwards;
-  }
-  .right img {
-    animation: zoomIn 0.8s ease-in-out forwards;
-  }
-  /* Media Query for mobile */
-@media (max-width: 768px) {
+
   .nav-links {
     position: fixed;
     top: 0;
     right: -100%;
     height: 100vh;
-    width: 200px;
-    background-color: black;
+    width: 250px;
+    background-color: #df4170;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: right 0.3s ease-in-out;
-    z-index: 100;
-    background-color: #ce2b61;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    right: 0;
   }
 
   .nav-links ul {
     flex-direction: column;
     gap: 30px;
-  }
-
-  .nav-links.active {
-    right: 0;
+    animation: fadeInUp 0.5s ease-in-out forwards;
   }
 
   .hamburger {
@@ -527,45 +533,154 @@ form .btn2 {
   .close-icon.active {
     display: block;
   }
+
+  .row {
+    flex-direction: column;
+    animation: fadeInUp 0.8s ease-in-out forwards;
+  }
+
+  .about-col-1 img,
+  .about-col-2 {
+    animation: zoomIn 0.8s ease-in-out forwards;
+  }
+
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+
+  .services-list div {
+    animation: fadeInUp 0.8s ease-in-out forwards;
+  }
+
+  .work-list {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-left,
+  .contact-right {
+    flex-basis: 100%;
+    animation: fadeInUp 0.8s ease-in-out forwards;
+  }
+
+  .right img {
+    animation: zoomIn 0.8s ease-in-out forwards;
+  }
 }
+  
+@media (max-width: 768px) {
+  .navbar {
+    position: relative;
+    background-color: #111;
+    padding: 15px 20px;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: white;
+  }
+
+  .close-icon {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: white;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #db246a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: right 0.3s ease-in-out;
+    z-index: 2000;
+  }
+
+  .nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .nav-links ul li {
+    margin: 20px 0;
+  }
+
+  .nav-links ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .close-icon.active {
+    display: block;
+  }
+
+  .hamburger.hidden {
+    display: none;
+  }
 }
 
+/* Media Query for mobile phones (max-width: 480px) */
 @media (max-width: 480px) {
   .navbar {
     flex-direction: column;
     padding: 15px;
     animation: slideDown 0.8s ease-in-out forwards;
   }
+
   .logo {
     width: 80px;
   }
+
   .header-text h1 {
     font-size: 24px;
   }
+
   .header-text p {
     font-size: 16px;
   }
+
   .sub-title {
     font-size: 28px;
   }
+
   .sub-para {
     font-size: 15px;
   }
+
   .services-list div h2,
   .services-list div p {
     font-size: 16px;
   }
+
   .right img {
     height: auto;
     max-width: 100%;
     object-fit: contain;
     animation: zoomIn 0.8s ease-in-out forwards;
   }
+
   .btn,
   .btn2 {
     padding: 10px 30px;
     font-size: 16px;
   }
+
   .social-icons a {
     font-size: 24px;
   }

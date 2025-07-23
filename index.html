@@ -271,23 +271,26 @@
           .catch((error) => console.error("Error!", error.message));
       });
     </script>
-     <!-- JavaScript -->
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const closeIcon = document.getElementById('close-icon');
-    const navLinks = document.getElementById('nav-links');
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.add('active');
-      hamburger.style.display = 'none';
-      closeIcon.style.display = 'block';
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const closeIcon = document.getElementById("close-icon");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", function () {
+      navLinks.classList.add("active");
+      closeIcon.classList.add("active");
+      hamburger.classList.add("hidden");
     });
 
-    closeIcon.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      hamburger.style.display = 'block';
-      closeIcon.style.display = 'none';
+    closeIcon.addEventListener("click", function () {
+      navLinks.classList.remove("active");
+      closeIcon.classList.remove("active");
+      hamburger.classList.remove("hidden");
     });
-  </script>
+  });
+</script>
+
   </body>
 </html>
