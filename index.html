@@ -277,23 +277,25 @@
     const hamburger = document.getElementById("hamburger");
     const closeIcon = document.getElementById("close-icon");
     const navLinks = document.querySelector(".nav-links");
-    const navItems = document.querySelectorAll(".nav-links ul li a");
+    const navItems = document.querySelectorAll(".nav-links a");
 
+    // Open the nav
     hamburger.addEventListener("click", function () {
       navLinks.classList.add("active");
       closeIcon.classList.add("active");
       hamburger.classList.add("hidden");
     });
 
+    // Close icon functionality
     closeIcon.addEventListener("click", function () {
       navLinks.classList.remove("active");
       closeIcon.classList.remove("active");
       hamburger.classList.remove("hidden");
     });
 
-    // ✅ Hide nav when clicking a nav link (mobile)
+    // Close nav when any nav link is clicked (for mobile)
     navItems.forEach((item) => {
-      item.addEventListener("click", function () {
+      item.addEventListener("click", () => {
         navLinks.classList.remove("active");
         closeIcon.classList.remove("active");
         hamburger.classList.remove("hidden");
@@ -301,6 +303,7 @@
     });
   });
 </script>
+
 
    
 </body>
