@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  background-color: black;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ Top navigation bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ✅ Nav links list */
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links ul li {
+  position: relative; /* Needed for ::after to work properly */
+}
+
+/* ✅ Nav link base */
+.nav-links ul li a {
+  position: relative; /* Required for ::after positioning */
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 5px 0;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+/* ✅ Underline effect */
+.nav-links ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 3px;
+  background: #ff004f;
+  transition: width 0.3s ease;
+}
+
+.nav-links ul li a:hover::after {
+  width: 100%;
+}
+
+/* ✅ Main content layout */
+.main {
+  display: flex;
+  flex: 1;
+}
+
+/* ✅ Left area (can hold welcome text later) */
+.left {
+  flex: 1;
+  padding: 40px;
+}
+
+/* ✅ Right side with image fully covering */
+.right {
+  flex: 1;
+  position: relative;
+}
+
+.right img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+}
+
+.header-text {
+  margin-top: 80px;
+  max-width: 500px;
+  padding-left: 20px;
+}
+
+.header-text p {
+  color: #ff004f;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.header-text h1 {
+  font-size: 32px;
+  line-height: 1.4;
+}
+
+.header-text h1 span {
+  color: #ff004f;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <!-- ✅ Top Navbar -->
+    <div class="navbar">
+      <img src="logo.jpg" alt="Logo" class="logo" />
+      <div class="header-text">
+        <!-- <p>WEB DEVELOPER</p>
+        <h1>Hi,I'm Navya E From Kerala</h1>
+      </div> -->
+      <div class="nav-links">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ✅ Main Content Area -->
+    <div class="main">
+      <div class="left">
+        <!-- You can add welcome text or intro here -->
+         <div class="header-text">
+          <p>WEB DEVELOPER</p>
+          <h1>Hi, I'm <span>Navya E</span> From Kerala</h1>
+        </div>
+      </div>
+      <div class="right">
+        <img src="background.jpg" alt="Profile Image" />
+      </div>
+    </div>
+  </body>
+</html>

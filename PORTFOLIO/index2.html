@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navya Portfolio</title>
+    <script
+      src="https://kit.fontawesome.com/edd9700718.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      body {
+        background-color: black;
+        color: white;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ✅ NAVIGATION */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 60px;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #ff004f;
+      }
+
+      .nav-links ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-links ul li {
+        position: relative;
+      }
+
+      .nav-links ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        position: relative;
+      }
+
+      .nav-links ul li a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background: #ff004f;
+        left: 0;
+        bottom: -6px;
+        transition: width 0.3s ease;
+      }
+
+      .nav-links ul li a:hover::after {
+        width: 100%;
+      }
+
+      /* ✅ MAIN LAYOUT */
+      .main {
+        display: flex;
+        flex: 1;
+        height: 100vh;
+        width: 100%;
+      }
+
+      .left {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 60px;
+      }
+
+      .header-text {
+        max-width: 500px;
+      }
+
+      .header-text p {
+        font-size: 20px;
+        color: #ff004f;
+        margin-bottom: 10px;
+      }
+
+      .header-text h1 {
+        font-size: 40px;
+        line-height: 1.4;
+      }
+
+      .header-text h1 span {
+        color: #ff004f;
+      }
+
+      .right {
+        flex: 1;
+        position: relative;
+      }
+
+      .right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: right;
+        border-top-left-radius: 20px;
+      }
+      /* 
+      -----------about----------------- */
+      #about {
+        padding: 80px 0;
+        color: #ababab;
+      }
+      .row {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .about-col-1 {
+        flex-basis: 35%;
+      }
+      .about-col-1 img {
+        width: 100%;
+        border-radius: 15px;
+      }
+
+      .about-col-2 {
+        flex-basis: 60%;
+      }
+      .sub-title {
+        font-size: 60px;
+        font-weight: 600;
+        color: white;
+      }
+      .sub-para {
+        text-align: justify;
+        text-indent: 3em;
+        font-size: 18px;
+        line-height: 1.2;
+      }
+      .tab-titles {
+        display: flex;
+        margin: 20px 0 40px;
+      }
+      .tab-links {
+        margin-right: 50px;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .tab-links::after {
+        content: "";
+        width: 0;
+        height: 3px;
+        background: #ff004f;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        transition: 0.5s;
+      }
+      .tab-links.active-link::after {
+        width: 50%;
+      }
+      .tab-contents ul li {
+        list-style: none;
+        margin: 10px 0;
+      }
+      .tab-contents ul li span {
+        color: #b54769;
+        font-size: 14px;
+      }
+
+      .tab-contents {
+        display: none;
+      }
+      .tab-contents.active-tab {
+        display: block;
+      }
+
+      /* ------------services---------- */
+
+      #services {
+        padding: 30px 0;
+      }
+      .services-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 40px;
+        margin-top: 50px;
+      }
+
+      .services-list div {
+        background: #262626;
+        padding: 40px;
+        font-size: 15px;
+        font-weight: 300px;
+        border-right: 10px;
+        border-radius: 110px;
+        transition: background 0.5s, transform 0.5s;
+      }
+      .services-list div i {
+        font-size: 40px;
+        margin-bottom: 25px;
+      }
+
+      .services-list div h2 {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+
+      .services-list div p {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+      .services-list div a {
+        text-decoration: none;
+        color: white;
+        font-size: 15px;
+        margin-top: 20px;
+        display: inline-block;
+      }
+      .services-list div:hover {
+        background: #ff004f;
+        transform: translateY(-10px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ✅ TOP NAV -->
+    <div class="navbar">
+      <div class="logo">NAVYA.E</div>
+      <div class="nav-links">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ✅ MAIN AREA -->
+    <div class="main">
+      <div class="left">
+        <div class="header-text">
+          <p>Web Developer</p>
+          <h1>Hi, I'm <span>Navya E</span><br />From Kerala</h1>
+        </div>
+      </div>
+      <div class="right">
+        <img src="background.jpg" alt="Profile Image" />
+      </div>
+    </div>
+    <!-- -------------ABOUT-------------------- -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1"><img src="user.jpg" alt="" /></div>
+
+          <div class="about-col-2">
+            <h1 class="sub-title">About me</h1>
+            <p class="sub-para">
+              I’m a passionate Web Developer with a B.Tech in Computer Science,
+              driven by a love for creating modern, responsive websites and web
+              applications. I enjoy working across both front-end and back-end
+              technologies, turning ideas into user-friendly digital
+              experiences. With a focus on clean code, performance, and
+              continuous learning, I’m always looking to grow and take on
+              exciting new challenges in the world of web development.
+            </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>Web development</span><br />Web App Development</li>
+                <li><span>UI/UX</span><br />Desiging Web interfaces</li>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>2025/June-current</span><br />Web App Development Intern
+                  at Bridgeon LLC
+                </li>
+                <li>
+                  <span>2025/March-2025/June</span><br />Front-end Developer
+                  Intern & Team Co-Lead at Bluestock Fintech
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>2022-2025</span><br />B.Tech in Computer Science
+                  Engineering
+                </li>
+                <li>
+                  <span>2019-2022</span><br />Diploma in Computer Engineering
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------SERVICES-------------- -->
+    <div id="services">
+      <div class="continer">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>Web Design</h2>
+            <p>
+              Web design is the process of creating the layout, look, and feel
+              of a website.
+            </p>
+            <a href="#">Learn More </a>
+          </div>
+          <div>
+            <i class="fa-solid fa-house"></i>
+            <h2>Web Development</h2>
+            <p>
+              Web development is the process of building and maintaining
+              websites or web applications.
+            </p>
+            <a href="#">Learn More </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -----------portfolio------------------ -->
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My work</h1>
+            
+        </div>
+    </div>
+
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+  </body>
+</html>

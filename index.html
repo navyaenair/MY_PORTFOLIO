@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,6 +18,15 @@
     <!-- ✅ Top Navbar -->
     <div class="navbar">
       <img src="logo.jpg" alt="Logo" class="logo" />
+      <!-- Hamburger Icon -->
+      <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <!-- Close Icon (Initially hidden) -->
+      <div class="close-icon" id="close-icon">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
       <div class="nav-links">
         <ul>
           <li><a href="#main">Home</a></li>
@@ -37,7 +49,7 @@
         </div>
       </div>
       <div class="right">
-        <!-- <img src="background1.jpg" alt="Profile Image" /> -->
+        <img src="background.jpg" alt="Profile Image" />
       </div>
     </div>
 
@@ -126,7 +138,8 @@
             <i class="fa-solid fa-database"></i>
             <h2>Database Managment</h2>
             <p>
-             Database management involves organizing and maintaining data efficiently using specialized software.
+              Database management involves organizing and maintaining data
+              efficiently using specialized software.
             </p>
             <a href="#">Learn More </a>
           </div>
@@ -172,10 +185,11 @@
     <div id="contact">
       <div class="container">
         <div class="row">
-
           <div class="contact-left">
             <h1 class="sub-title">Contact me</h1>
-            <p><i class="fa-solid fa-envelope"></i>navyarathnakaran123@gmail.com</p>
+            <p>
+              <i class="fa-solid fa-envelope"></i>navyarathnakaran123@gmail.com
+            </p>
             <p><i class="fa-solid fa-phone"></i>+91-9061905831</p>
             <div class="social-icons">
               <a href="https://linkedin.com/in/navya-e-nair"
@@ -187,23 +201,43 @@
               <a href="https://leetcode.com/u/NAVYA_E/"
                 ><i class="fa-solid fa-code-branch"></i
               ></a>
-              <a href="https://www.instagram.com/navya_e_nair"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.instagram.com/navya_e_nair"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
             </div>
-            <a href="https://drive.google.com/file/d/1cbdRgVq4uf847iRlb-DDKlfyIwp2WAyN/view?usp=sharing" class="btn btn2">Download CV</a>
+            <a
+              href="https://drive.google.com/file/d/1cbdRgVq4uf847iRlb-DDKlfyIwp2WAyN/view?usp=sharing"
+              class="btn btn2"
+              >Download CV</a
+            >
           </div>
 
           <div class="contact-right">
             <form name="submit-to-google-sheet">
-              <input type="text" name="Name" placeholder="Your Name" required>
-              <input type="email" name="Email" placeholder="Your Email" required>
-              <textarea name="Message" rows="6"placeholder="Your Message" ></textarea>
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="Email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your Message"
+              ></textarea>
               <button type="submit" class="btn btn2">Submit</button>
             </form>
             <span id="msg"></span>
           </div>
         </div>
       </div>
-      <div class="copyright"><p>&copy; 2025 Navya E. Designed and developed by Navya E.All rights reserved.</p></div>
+      <div class="copyright">
+        <p>
+          &copy; 2025 Navya E. Designed and developed by Navya E.All
+          rights reserved.
+        </p>
+      </div>
     </div>
 
     <script>
@@ -220,20 +254,40 @@
     </script>
 
     <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwc1kdgcUhCZWhrxdp5tbsXRQF8N_SNyjduXzy9mVQBXCoIq09aKOrWZpywIbrOwGRZ/exec'
-  const form = document.forms['submit-to-google-sheet']
-  const msg=document.getElementById("msg")
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {msg.innerHTML="Message sent successfully"
-        setTimeout(function(){
-          msg.innerHTML=" "
-        },5000)
-        form.reset()
-        })
-      .catch(error => console.error('Error!', error.message))
-  })
-</script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwc1kdgcUhCZWhrxdp5tbsXRQF8N_SNyjduXzy9mVQBXCoIq09aKOrWZpywIbrOwGRZ/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Message sent successfully";
+            setTimeout(function () {
+              msg.innerHTML = " ";
+            }, 5000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+     <!-- JavaScript -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const closeIcon = document.getElementById('close-icon');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.add('active');
+      hamburger.style.display = 'none';
+      closeIcon.style.display = 'block';
+    });
+
+    closeIcon.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      hamburger.style.display = 'block';
+      closeIcon.style.display = 'none';
+    });
+  </script>
   </body>
 </html>

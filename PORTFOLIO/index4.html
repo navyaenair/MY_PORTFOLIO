@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ✅ Top Navbar -->
+    <div class="navbar">
+      <img src="logo.jpg" alt="Logo" class="logo" />
+      <div class="nav-links" id="navLinks">
+        <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+    </div>
+
+    <!-- ✅ Landing Section -->
+    <div class="main">
+      <div class="left">
+        <div class="header-text">
+          <p>Web Developer</p>
+          <h1>Hi, I'm <span>Navya E</span><br />From Kerala</h1>
+        </div>
+      </div>
+      <div class="right"></div>
+    </div>
+
+    <!-- ✅ About Section -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="user.jpg" alt="Profile" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p class="sub-para">
+              I’m a passionate Web Developer with a B.Tech in Computer Science, driven by a love for creating modern, responsive websites and web applications. I enjoy working across both front-end and back-end technologies.
+            </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
+              <p class="tab-links" onclick="opentab('experience', event)">Experience</p>
+              <p class="tab-links" onclick="opentab('education', event)">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>Web Development</span><br />Web App Development</li>
+                <li><span>UI/UX</span><br />Designing Web Interfaces</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li><span>2025/June - Current</span><br />Web App Development Intern at Bridgeon LLC</li>
+                <li><span>2025/March - June</span><br />Frontend Developer Intern at Bluestock Fintech</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>2022-2025</span><br />B.Tech in Computer Science</li>
+                <li><span>2019-2022</span><br />Diploma in Computer Engineering</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ Services -->
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>Web Design</h2>
+            <p>Creating the layout, look, and feel of a website.</p>
+            <a href="#">Learn More</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-house"></i>
+            <h2>Web Development</h2>
+            <p>Building and maintaining websites and web applications.</p>
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ Portfolio -->
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Works</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="diabetes.jpeg" alt="Diabetes Diary" />
+            <div class="layer">
+              <h3>Diabetes Diary</h3>
+              <p>Health diary to track sugar, medications, and weight.</p>
+              <a href="#"><i class="fa-solid fa-square-arrow-up-right"></i></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="eduverse.jpeg" alt="EduVerse" />
+            <div class="layer">
+              <h3>EduVerse</h3>
+              <p>EdTech platform with jobs, mentorship, and support.</p>
+              <a href="#"><i class="fa-solid fa-square-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn">See More</a>
+      </div>
+    </div>
+
+    <!-- ✅ Contact -->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fa-solid fa-envelope"></i> navyarathnakaran123@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i> +91-9061905831</p>
+            <div class="social-icons">
+              <a href="https://linkedin.com/in/navya-e-nair"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://github.com/navyaenair"><i class="fa-brands fa-github"></i></a>
+              <a href="https://leetcode.com/u/NAVYA_E/"><i class="fa-solid fa-code-branch"></i></a>
+              <a href="https://www.instagram.com/navya_e_nair"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="https://drive.google.com/file/d/1cbdRgVq4uf847iRlb-DDKlfyIwp2WAyN/view" class="btn btn2">Download CV</a>
+          </div>
+
+          <div class="contact-right">
+            <form>
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input type="email" name="Email" placeholder="Your Email" required />
+              <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Navya E. Designed and developed by Navya E. All rights reserved.</p>
+      </div>
+    </div>
+
+    <!-- ✅ JS -->
+    <script>
+      function opentab(tabName, event) {
+        const tabLinks = document.querySelectorAll(".tab-links");
+        const tabContents = document.querySelectorAll(".tab-contents");
+
+        tabLinks.forEach(link => link.classList.remove("active-link"));
+        tabContents.forEach(tab => tab.classList.remove("active-tab"));
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabName).classList.add("active-tab");
+      }
+
+      function showMenu() {
+        document.getElementById("navLinks").style.right = "0";
+      }
+
+      function hideMenu() {
+        document.getElementById("navLinks").style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>
