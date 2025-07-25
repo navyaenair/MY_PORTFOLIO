@@ -84,8 +84,6 @@ body {
   color: #ff004f;
 }
 
-
-
 .right {
   flex: 1;
   display: flex;
@@ -730,8 +728,6 @@ form .btn2 {
   }
 }
 
-
-  
 @media (max-width: 768px) {
   .navbar {
     position: relative;
@@ -850,13 +846,9 @@ form .btn2 {
     font-size: 24px;
   }
 }
-.right img{
-  border: double 7px    #e6aba6;
+.right img {
+  border: double 7px #e6aba6;
   height: 100%;
   width: 100%;
   border-radius: 50%;
 }
-
-   
-
-   
