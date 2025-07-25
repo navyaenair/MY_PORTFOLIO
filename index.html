@@ -161,7 +161,9 @@
                 A web-based health diary enabling diabetic patients to track
                 their blood sugar levels, medications, and weight in real-time.
               </p>
-              <a href="#"><i class="fa-solid fa-square-arrow-up-right"></i></a>
+              <a href="https://github.com/navyaenair/DIABETES-DIARY"
+                ><i class="fa-solid fa-square-arrow-up-right"></i
+              ></a>
             </div>
           </div>
           <div class="work">
@@ -172,7 +174,9 @@
                 An EdTech community platform offering job postings, mentorship
                 programs, and student fundraising support.
               </p>
-              <a href="#"><i class="fa-solid fa-square-arrow-up-right"></i></a>
+              <a href="https://github.com/navyaenair/CsmpusBridge"
+                ><i class="fa-solid fa-square-arrow-up-right"></i
+              ></a>
             </div>
           </div>
         </div>
@@ -233,6 +237,15 @@
         </div>
       </div>
       <div class="copyright">
+        <div
+          id="local-time"
+          class="tw-box-border"
+          style="font-size: 2em; font-weight: bold; text-align: center"
+        >
+          <p class="tw-text-lg">Local Time (IST)</p>
+          <span id="time-display">--:--:--</span>
+        </div>
+
         <p>
           &copy; 2025 Navya E. Designed and developed by Navya E.All
           rights reserved.
@@ -272,39 +285,60 @@
       });
     </script>
 
-   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.getElementById("hamburger");
-    const closeIcon = document.getElementById("close-icon");
-    const navLinks = document.querySelector(".nav-links");
-    const navItems = document.querySelectorAll(".nav-links a");
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.getElementById("hamburger");
+        const closeIcon = document.getElementById("close-icon");
+        const navLinks = document.querySelector(".nav-links");
+        const navItems = document.querySelectorAll(".nav-links a");
 
-    // Open the nav
-    hamburger.addEventListener("click", function () {
-      navLinks.classList.add("active");
-      closeIcon.classList.add("active");
-      hamburger.classList.add("hidden");
-    });
+        // Open the nav
+        hamburger.addEventListener("click", function () {
+          navLinks.classList.add("active");
+          closeIcon.classList.add("active");
+          hamburger.classList.add("hidden");
+        });
 
-    // Close icon functionality
-    closeIcon.addEventListener("click", function () {
-      navLinks.classList.remove("active");
-      closeIcon.classList.remove("active");
-      hamburger.classList.remove("hidden");
-    });
+        // Close icon functionality
+        closeIcon.addEventListener("click", function () {
+          navLinks.classList.remove("active");
+          closeIcon.classList.remove("active");
+          hamburger.classList.remove("hidden");
+        });
 
-    // Close nav when any nav link is clicked (for mobile)
-    navItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-        closeIcon.classList.remove("active");
-        hamburger.classList.remove("hidden");
+        // Close nav when any nav link is clicked (for mobile)
+        navItems.forEach((item) => {
+          item.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            closeIcon.classList.remove("active");
+            hamburger.classList.remove("hidden");
+          });
+        });
       });
-    });
-  });
-</script>
+    </script>
+    <script>
+      function localTime() {
+        const timeDisplay = document.getElementById("time-display");
 
+        setInterval(() => {
+          const now = new Date();
 
-   
-</body>
+          // Convert to IST (UTC + 5:30)
+          const options = {
+            timeZone: "Asia/Kolkata",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: false,
+          };
+
+          const formatter = new Intl.DateTimeFormat([], options);
+          timeDisplay.textContent = formatter.format(now);
+        }, 1000);
+      }
+
+      // Call the function
+      localTime();
+    </script>
+  </body>
 </html>

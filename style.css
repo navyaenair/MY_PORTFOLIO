@@ -84,6 +84,8 @@ body {
   color: #ff004f;
 }
 
+
+
 .right {
   flex: 1;
   display: flex;
@@ -677,6 +679,57 @@ form .btn2 {
     right: 0;
   }
 }
+@media (max-width: 768px) {
+  .navbar {
+    position: relative;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #df4170;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    z-index: 1002;
+  }
+
+  .close-icon {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    z-index: 1003;
+  }
+
+  .close-icon.active {
+    display: block;
+  }
+}
+
 
   
 @media (max-width: 768px) {
@@ -797,3 +850,13 @@ form .btn2 {
     font-size: 24px;
   }
 }
+.right img{
+  border: double 7px    #e6aba6;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+   
+
+   
